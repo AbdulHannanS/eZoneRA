@@ -1,0 +1,30 @@
+{
+  
+"manifest_version": 2,
+
+  
+"name": "eZone research Assistant",
+  
+"description": "1. click see more button on scroll 2. put company domain in popup to search for email address",
+  
+"version": "1.0",
+
+ "permissions": [
+          "tabs"
+        ],
+ "background": {
+        "scripts": ["bgscript.js"],
+        "persistent": false
+    },
+"browser_action": {
+    "default_popup": "popup.html",
+"default_icon": "pin128.png"
+},
+"icons":{ "16":"pin16.png","48":"pin48.png", "128":"pin128.png"},
+"content_scripts": [
+  {
+    "matches": ["https://www.linkedin.com/company/*"],
+    "js": ["jquery-3.3.1.min.js", "script1.js"]
+  }
+]
+}
